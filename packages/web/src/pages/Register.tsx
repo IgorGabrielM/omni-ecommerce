@@ -1,9 +1,5 @@
-function Register(){
+export function Register(){
     return(
-        <div>
-            Register
-        </div>
+        <div>Register</div>
     )
 }
-
-export default Register
