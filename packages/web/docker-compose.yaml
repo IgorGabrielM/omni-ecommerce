@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   web:
-    container_name: omni-${npm-package-name}
+    container_name: omni-web
     volumes:
       - ${PWD}:/app/web
       - /app/web/node_modules

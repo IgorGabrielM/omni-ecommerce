@@ -1,0 +1,16 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+
+build:
+  docker:
+    web: packages/web/Dockerfile
+    server: packages/server/Dockerfile
+  config:
+    NODE_ENV: production
+    API_REST_PORT: 8080
+
+run:
+  web: npm start
+  server: java -Dserver.port=$API_REST_PORT -Xmx300m -Xss512k -XX:CICompilerCount=2 -Dfile.encoding=UTF-8 -XX:+UseContainerSupport -Djava.security.egd=file:/dev/./urandom -jar /app.jar

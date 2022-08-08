@@ -3,3 +3,4 @@
 *.iws
 .sonar/
 .sonarlint/
+.env

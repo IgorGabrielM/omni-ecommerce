@@ -2,13 +2,17 @@ version: "3.7"
 
 services:
   server:
+    container_name: omni-server
     build: .
+    restart: always
     ports:
       - ${API_REST_PORT}
     depends_on:
       - database
 
   database:
+    container_name: omni-database
     image: "postgres:13.1-alpine"
+    restart: always
     ports:
       - ${DATABASE_PORT}
